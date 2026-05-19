@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#0f172a"/>
+  <path d="M22 64h76v18H22v-18z" fill="#2496ed"/>
+  <path d="M22 62h76v8H22v-8z" fill="#5db9f8"/>
+  <path d="M38 54h10v8H38z" fill="#2496ed"/>
+  <path d="M52 54h10v8H52z" fill="#2496ed"/>
+  <path d="M66 54h10v8H66z" fill="#2496ed"/>
+  <path d="M50 42h20v8H50z" fill="#2496ed"/>
+  <path d="M35 74c0 6 11 18 17 18h36c12 0 17-6 17-18H35Z" fill="#2496ed"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">Docker</text>
+</svg>

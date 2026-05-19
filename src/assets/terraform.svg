@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#0f172a"/>
+  <path d="M60 32l22 14v28L60 88 38 74V46L60 32Z" fill="#7b4dff"/>
+  <path d="M60 40v20l14 8V56L60 40Z" fill="#a78bfa" opacity="0.8"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">Terraform</text>
+</svg>

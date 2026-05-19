@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#091e09"/>
+  <path d="M29 35l31-17 31 17v34l-31 17-31-17V35Z" fill="#339933"/>
+  <text x="60" y="72" font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="28" text-anchor="middle" fill="#fff">Node</text>
+</svg>

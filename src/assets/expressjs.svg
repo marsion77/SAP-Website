@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#333"/>
+  <path d="M30 40h60v12H30z" fill="#fff"/>
+  <path d="M30 58h38v12H30z" fill="#fff"/>
+  <path d="M62 58h28v12H62z" fill="#000"/>
+  <path d="M30 76h40v12H30z" fill="#fff"/>
+  <text x="60" y="100" font-family="Arial,Helvetica,sans-serif" font-size="18" text-anchor="middle" fill="#fff">Express</text>
+</svg>

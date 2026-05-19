@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#1a1a1f"/>
+  <path d="M36 36h48l14 24-14 24H36l-14-24 14-24Z" fill="#ee672a"/>
+  <path d="M48 40h24v40H48z" fill="#fff" opacity="0.2"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">Magento</text>
+</svg>

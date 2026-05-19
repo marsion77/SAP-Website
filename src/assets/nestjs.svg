@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#1d1d1f"/>
+  <circle cx="60" cy="60" r="44" fill="#e0234e" opacity="0.95"/>
+  <path d="M54 34h12v52H54V34Z" fill="#fff"/>
+  <path d="M66 60L90 44v32L66 60Z" fill="#fff" opacity="0.9"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">Nest</text>
+</svg>

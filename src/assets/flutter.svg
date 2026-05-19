@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#071625"/>
+  <path d="M42 24l36 36-20 20-36-36 20-20Z" fill="#42b0ff"/>
+  <path d="M42 76L78 40l20 20-36 36-20-20Z" fill="#0ab5ff"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">Flutter</text>
+</svg>

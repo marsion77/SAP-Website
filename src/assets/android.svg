@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#0f172a"/>
+  <path d="M40 34l4-10h32l4 10" fill="#a4c639"/>
+  <rect x="36" y="42" width="48" height="56" rx="18" fill="#a4c639"/>
+  <circle cx="50" cy="58" r="4" fill="#0f172a"/>
+  <circle cx="70" cy="58" r="4" fill="#0f172a"/>
+  <path d="M46 92h28v6H46z" fill="#0f172a"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">Android</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#111827"/>
+  <path d="M42 30h36v18H42z" fill="#6b7280"/>
+  <path d="M30 54h60v18H30z" fill="#9ca3af"/>
+  <path d="M42 78h36v18H42z" fill="#d1d5db"/>
+  <path d="M68 48l14-14 14 14" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M52 72l-14 14-14-14" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">CI/CD</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#111827"/>
+  <path d="M30 24L90 96V24H30Z" fill="#7f52ff"/>
+  <path d="M30 24H60L90 72V96L30 24Z" fill="#ff5f79"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">Kotlin</text>
+</svg>

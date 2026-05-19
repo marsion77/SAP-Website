@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#191919"/>
+  <path d="M93 31C73 9 36 24 33 24s21 11 21 11C22 49 14 82 34 95c15 10 36 4 36 4s-4-16 8-25c8-6 28-35 15-43z" fill="#f05138"/>
+  <path d="M45 26c3 1 15 12 10 30-4 16-9 30-9 30s-11-2-14-14c-3-12 1-26 4-33 3-6 7-15 9-13z" fill="#fff" opacity="0.3"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">Swift</text>
+</svg>

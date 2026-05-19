@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#1b1b2a"/>
+  <path d="M40 34h40v52H40z" fill="#96588a"/>
+  <path d="M46 40h28v40H46z" fill="#fff" opacity="0.2"/>
+  <path d="M46 86h28v8H46z" fill="#fff"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="14" text-anchor="middle" fill="#fff">WooCommerce</text>
+</svg>

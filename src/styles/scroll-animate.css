@@ -1,0 +1,44 @@
+/* Global scroll animation styles applied to <section> elements */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 900ms cubic-bezier(.16,.84,.28,1), transform 900ms cubic-bezier(.16,.84,.28,1);
+  will-change: opacity, transform;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Per-child stagger classes (applied automatically by the initializer). */
+.scroll-animate .stagger-0 { transition-delay: 0ms; }
+.scroll-animate .stagger-1 { transition-delay: 80ms; }
+.scroll-animate .stagger-2 { transition-delay: 160ms; }
+.scroll-animate .stagger-3 { transition-delay: 240ms; }
+.scroll-animate .stagger-4 { transition-delay: 320ms; }
+.scroll-animate .stagger-5 { transition-delay: 400ms; }
+
+/* Also allow non-absolute children to fade up with same timing when the section becomes in-view.
+   This avoids animating overlay/backdrop elements (which are often absolutely positioned)
+   that can produce visible lines or rendering artifacts. */
+.scroll-animate > *:not(.absolute) {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 700ms cubic-bezier(.2,.9,.2,1), transform 700ms cubic-bezier(.2,.9,.2,1);
+}
+.scroll-animate.in-view > *:not(.absolute) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-animate,
+  .scroll-animate.in-view,
+  .scroll-animate > *,
+  .scroll-animate.in-view > * {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#102f4f"/>
+  <path d="M82 40c-12-18-42-18-54 0-2 4-2 10 0 16 4 10 16 20 27 22 11-2 23-12 27-22 2-6 2-12 0-16Z" fill="#f29111"/>
+  <path d="M49 72c3 4 9 9 11 16 2 7 1 14-1 18 0 0 16-4 18-20 2-14-6-26-13-28-8-2-15 8-15 14Z" fill="#fff" opacity="0.9"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">MySQL</text>
+</svg>

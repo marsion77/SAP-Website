@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#0f172a"/>
+  <circle cx="60" cy="60" r="40" fill="#21759b"/>
+  <path d="M42 36l18 48 18-48" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <path d="M60 32c14 0 26 12 26 26 0 14-12 26-26 26s-26-12-26-26c0-14 12-26 26-26z" fill="none" stroke="#fff" stroke-width="6"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">WP</text>
+</svg>

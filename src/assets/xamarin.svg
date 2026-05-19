@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#071b26"/>
+  <path d="M32 28l56 64-14 14-56-64 14-14Z" fill="#33aaff"/>
+  <path d="M32 92l56-64 14 14-56 64-14-14Z" fill="#4db6ff" opacity="0.9"/>
+  <text x="60" y="108" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" fill="#fff">Xamarin</text>
+</svg>

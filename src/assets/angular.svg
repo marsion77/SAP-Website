@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="angGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#dd1b16"/>
+      <stop offset="100%" stop-color="#c3000f"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="#151e2f"/>
+  <path d="M94 24H26L60 102L94 24Z" fill="url(#angGrad)"/>
+  <path d="M60 34L42 74H53L60 58L67 74H78L60 34Z" fill="#fff"/>
+</svg>
