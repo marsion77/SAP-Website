@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+const API = import.meta.env.VITE_API_URL;
 
 export default function ContactUs() {
   const [searchParams] = useSearchParams();
@@ -23,19 +24,27 @@ export default function ContactUs() {
     setError('');
 
     try {
-      const response = await fetch('/api/contact', {
+      // Create abort controller for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
+      const response = await fetch(`${API}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(inputs)
+        body: JSON.stringify(inputs),
+        signal: controller.signal
       });
+
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         const result = await response.json();
-        throw new Error(result.error || 'Failed to send message.');
+        throw new Error(result.error || `Server error: ${response.status}`);
       }
 
+      const data = await response.json();
       setSuccess(true);
 
       setInputs({
@@ -47,7 +56,14 @@ export default function ContactUs() {
       });
 
     } catch (err) {
-      setError(err.message || 'Submission failed.');
+      if (err.name === 'AbortError') {
+        setError('Request timeout. The server is not responding. Please check your connection or try again later.');
+      } else if (err instanceof TypeError) {
+        setError('Network error. Unable to reach the server. Please check the backend URL.');
+      } else {
+        setError(err.message || 'Submission failed.');
+      }
+      console.error('Contact form error:', err);
     } finally {
       setLoading(false);
 
