@@ -35,7 +35,7 @@ export default function Footer() {
   // ];
 
   return (
-    <footer className="w-full bg-[#03141a] text-slate-300 pt-24 pb-10 px-6 sm:px-8 lg:px-12 relative z-20 overflow-hidden">
+    <footer className="w-full bg-[#03141a] text-slate-300 pt-16 pb-8 sm:pt-20 sm:pb-10 px-4 sm:px-6 lg:px-12 relative z-20 overflow-hidden">
 
       {/* CTA Section */}
       <div className="max-w-7xl mx-auto bg-gradient-to-r from-slate-900 via-[#0b4d74] to-[#0E90CF] rounded-[2.5rem] px-8 py-8 md:px-12 md:py-10 flex flex-col lg:flex-row items-center justify-between gap-8 mb-20 shadow-2xl relative overflow-hidden border border-white/10">
@@ -78,15 +78,11 @@ export default function Footer() {
         {/* Company Info */}
         <div className="md:col-span-4 space-y-7">
 
-          <Link
-            to="/"
-            className="text-3xl sm:text-4xl font-black tracking-tight text-white block"
-          >
-            Nexvora
-            <span className="text-[#0E90CF]">Technologies</span>
-          </Link>
+         <Link to="/" className="text-xl text-white sm:text-2xl font-black tracking-tight text-slate-900">
+                     NexaTech<span className="text-[#0E90CF]">Digital</span>
+                   </Link>
 
-          <p className="text-base text-slate-400 leading-8 max-w-md">
+          <p className="text-sm text-slate-400 leading-7 max-w-full">
             Nexvora Technologies delivers scalable enterprise software,
             modern web platforms, cloud-native systems, and digital
             transformation solutions for businesses worldwide.

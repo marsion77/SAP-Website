@@ -19,20 +19,20 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-24">
+        <div className="flex flex-wrap items-center justify-between gap-4 py-4 sm:py-5">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-black tracking-tight text-slate-900">
+            <Link to="/" className="text-xl sm:text-2xl font-black tracking-tight text-slate-900">
               NexaTech<span className="text-[#0E90CF]">Digital</span>
             </Link>
           </div>
           
           {/* Desktop link arrays structured with explicit 16px (text-base) font requirements */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center gap-4">
             {menuItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-base font-bold tracking-wide transition-colors relative py-2 ${
+                className={`text-sm md:text-base font-bold tracking-wide transition-colors relative py-2 whitespace-nowrap ${
                   checkActive(item.path) ? 'text-[#0E90CF]' : 'text-slate-600 hover:text-[#0E90CF]'
                 }`}
               >
@@ -47,7 +47,7 @@ export default function Navbar() {
             </Link> */}
           </div>
 
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 hover:text-slate-900 focus:outline-none">
               <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isOpen ? (
@@ -62,13 +62,13 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1 shadow-xl animate-slide">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-1 shadow-xl animate-slide">
           {menuItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               onClick={() => setIsOpen(false)}
-              className={`block px-4 py-3.5 rounded-xl text-base font-bold tracking-wide ${
+              className={`block px-4 py-3 rounded-xl text-sm font-bold tracking-wide ${
                 checkActive(item.path) ? 'bg-blue-50 text-[#0E90CF]' : 'text-slate-600 hover:bg-slate-50'
               }`}
             >

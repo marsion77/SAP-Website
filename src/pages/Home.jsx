@@ -212,7 +212,7 @@ export default function Home() {
 
 
    {/* HERO SECTION */}
-<section className="relative overflow-hidden bg-[#06131f] min-h-[100vh] py-24 flex items-center">
+<section className="relative overflow-hidden bg-[#06131f] min-h-[calc(100vh-8rem)] md:min-h-[calc(100vh-12rem)] py-16 md:py-24 flex items-center">
 
   {/* Background Glow */}
   <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-500/20 blur-[140px] rounded-full"></div>
