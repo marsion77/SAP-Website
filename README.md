@@ -1,16 +1,50 @@
-# React + Vite
+# NexaTech Digital – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NexaTech Digital is a modern IT Services website built to showcase enterprise-grade digital solutions, services, and company information. This project focuses on clean UI/UX, responsiveness, and seamless user experience across all devices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
+[https://sap-website-six.vercel.app/]
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧠 Project Overview
+This frontend application is designed for an IT services company and includes multiple pages to simulate a real-world corporate website.
 
-## Expanding the ESLint configuration
+### 📄 Pages Included:
+- Home
+- About Us
+- Services
+- Solutions
+- Careers
+- Contact Us
+- Testimonials
+- FAQs
+- Privacy Policy
+- Terms & Conditions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+- React.js (Frontend Library)
+- Tailwind CSS (Styling Framework)
+- Fetch API (For backend integration on Contact Us page)
+
+---
+
+## 📱 Features
+- Fully responsive design (Mobile, Tablet, Laptop, Desktop)
+- Modern UI with clean layout
+- Multi-page navigation system
+- Contact form integrated with backend API
+- Optimized component structure
+- Smooth user experience across all screen sizes
+
+---
+
+## 📡 API Integration
+- Contact Us form uses Fetch API to send data to backend server
+- Data is stored in MongoDB and email notifications are triggered
+
+--
