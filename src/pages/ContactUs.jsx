@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 const API = import.meta.env.VITE_API_URL;
 
 export default function ContactUs() {
-  const [searchParams] = useSearchParams();
 
   const [inputs, setInputs] = useState({
     name: '',
@@ -13,20 +11,95 @@ export default function ContactUs() {
     message: ''
   });
 
+  const [errors, setErrors] = useState({});
+
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  // Validation Function
+  const validateForm = () => {
+    let newErrors = {};
+
+    // Name Validation
+    if (!inputs.name.trim()) {
+      newErrors.name = 'Full name is required';
+    } else if (!/^[A-Za-z ]+$/.test(inputs.name)) {
+      newErrors.name = 'Only alphabets are allowed';
+    } else if (inputs.name.trim().length < 3) {
+      newErrors.name = 'Name must be at least 3 characters';
+    }
+
+    // Email Validation
+    if (!inputs.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(inputs.email)
+    ) {
+      newErrors.email = 'Invalid email address';
+    }
+
+    // Phone Validation
+    if (!inputs.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!/^[0-9]{10}$/.test(inputs.phone)) {
+      newErrors.phone = 'Phone number must be 10 digits';
+    }
+
+    // Subject Validation
+    if (!inputs.subject.trim()) {
+      newErrors.subject = 'Subject is required';
+    } else if (inputs.subject.trim().length < 5) {
+      newErrors.subject = 'Subject must be at least 5 characters';
+    }
+
+    // Message Validation
+    if (!inputs.message.trim()) {
+      newErrors.message = 'Message is required';
+    } else if (inputs.message.trim().length < 20) {
+      newErrors.message = 'Message must be at least 20 characters';
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Handle Change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setInputs({
+      ...inputs,
+      [name]: value
+    });
+
+    // Remove individual field error while typing
+    setErrors({
+      ...errors,
+      [name]: ''
+    });
+  };
+
+  // Submit Handler
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setLoading(true);
     setError('');
 
+    // Run Validation
+    if (!validateForm()) return;
+
+    setLoading(true);
+
     try {
-      // Create abort controller for timeout
+
+      // Create timeout controller
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
+      const timeoutId = setTimeout(() => {
+        controller.abort();
+      }, 10000);
 
       const response = await fetch(`${API}/api/contact`, {
         method: 'POST',
@@ -41,12 +114,14 @@ export default function ContactUs() {
 
       if (!response.ok) {
         const result = await response.json();
-        throw new Error(result.error || `Server error: ${response.status}`);
+        throw new Error(result.error || `Server Error: ${response.status}`);
       }
 
-      const data = await response.json();
+      await response.json();
+
       setSuccess(true);
 
+      // Reset Form
       setInputs({
         name: '',
         email: '',
@@ -55,21 +130,34 @@ export default function ContactUs() {
         message: ''
       });
 
+      setErrors({});
+
     } catch (err) {
+
       if (err.name === 'AbortError') {
-        setError('Request timeout. The server is not responding. Please check your connection or try again later.');
+        setError(
+          'Request timeout. Please try again later.'
+        );
       } else if (err instanceof TypeError) {
-        setError('Network error. Unable to reach the server. Please check the backend URL.');
+        setError(
+          'Network error. Unable to reach the server.'
+        );
       } else {
-        setError(err.message || 'Submission failed.');
+        setError(
+          err.message || 'Submission failed.'
+        );
       }
+
       console.error('Contact form error:', err);
+
     } finally {
+
       setLoading(false);
 
       window.setTimeout(() => {
         setSuccess(false);
       }, 4000);
+
     }
   };
 
@@ -78,9 +166,10 @@ export default function ContactUs() {
 
       {/* Hero Section */}
       <section className="py-20 px-6 lg:px-8 bg-slate-900 text-white">
+
         <div className="max-w-7xl mx-auto space-y-6 text-center">
 
-            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-md">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-md">
             <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
 
             <span className="text-xs uppercase tracking-[0.32em] text-sky-100 font-semibold">
@@ -88,18 +177,16 @@ export default function ContactUs() {
             </span>
           </div>
 
-          {/* <h1 className="text-5xl sm:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-snug break-words">
             Talk to our enterprise technology team.
-          </h1> */}
-                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-snug break-words">
-   Talk to our enterprise technology team.
-</h1>
+          </h1>
 
           <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
             Have a project, question or partnership idea? Reach out and we’ll connect you with the right experts.
           </p>
 
         </div>
+
       </section>
 
       {/* Contact Section */}
@@ -136,7 +223,7 @@ export default function ContactUs() {
                 {
                   icon: '🏢',
                   title: 'Office',
-                  info: ['Puducherry, India']
+                  info: ['NexaTech Digital Pvt Ltd 3rd Floor, Tech Park Avenue,OMR Road, Chennai,Tamil Nadu – 600096,India']
                 },
                 {
                   icon: '🕒',
@@ -190,6 +277,7 @@ export default function ContactUs() {
             </p>
 
             {success ? (
+
               <div className="bg-green-50 border border-green-200 text-green-800 p-5 rounded-xl text-center space-y-2">
 
                 <p className="text-2xl">✓</p>
@@ -203,120 +291,147 @@ export default function ContactUs() {
                 </p>
 
               </div>
+
             ) : (
 
               <form onSubmit={handleSubmit} className="space-y-4">
 
+                {/* Name */}
                 <div>
+
                   <label className="block text-sm font-semibold text-slate-900 mb-2">
                     Full Name *
                   </label>
 
                   <input
                     type="text"
-                    required
+                    name="name"
                     value={inputs.name}
-                    onChange={(e) =>
-                      setInputs({
-                        ...inputs,
-                        name: e.target.value
-                      })
-                    }
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#0E90CF] focus:ring-2 focus:ring-[#0E90CF]/20 transition"
                     placeholder="John Doe"
                   />
+
+                  {errors.name && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.name}
+                    </p>
+                  )}
+
                 </div>
 
+                {/* Email */}
                 <div>
+
                   <label className="block text-sm font-semibold text-slate-900 mb-2">
                     Email Address *
                   </label>
 
                   <input
                     type="email"
-                    required
+                    name="email"
                     value={inputs.email}
-                    onChange={(e) =>
-                      setInputs({
-                        ...inputs,
-                        email: e.target.value
-                      })
-                    }
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#0E90CF] focus:ring-2 focus:ring-[#0E90CF]/20 transition"
                     placeholder="john@example.com"
                   />
+
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.email}
+                    </p>
+                  )}
+
                 </div>
 
+                {/* Phone */}
                 <div>
+
                   <label className="block text-sm font-semibold text-slate-900 mb-2">
                     Phone Number *
                   </label>
 
                   <input
                     type="tel"
-                    required
+                    name="phone"
                     value={inputs.phone}
-                    onChange={(e) =>
-                      setInputs({
-                        ...inputs,
-                        phone: e.target.value
-                      })
-                    }
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#0E90CF] focus:ring-2 focus:ring-[#0E90CF]/20 transition"
-                    placeholder="+91 9876543210"
+                    placeholder="9876543210"
                   />
+
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.phone}
+                    </p>
+                  )}
+
                 </div>
 
+                {/* Subject */}
                 <div>
+
                   <label className="block text-sm font-semibold text-slate-900 mb-2">
                     Subject *
                   </label>
 
                   <input
                     type="text"
-                    required
+                    name="subject"
                     value={inputs.subject}
-                    onChange={(e) =>
-                      setInputs({
-                        ...inputs,
-                        subject: e.target.value
-                      })
-                    }
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#0E90CF] focus:ring-2 focus:ring-[#0E90CF]/20 transition"
                     placeholder="Project Inquiry"
                   />
+
+                  {errors.subject && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.subject}
+                    </p>
+                  )}
+
                 </div>
 
+                {/* Message */}
                 <div>
+
                   <label className="block text-sm font-semibold text-slate-900 mb-2">
                     Message *
                   </label>
 
                   <textarea
                     rows={4}
-                    required
+                    name="message"
                     value={inputs.message}
-                    onChange={(e) =>
-                      setInputs({
-                        ...inputs,
-                        message: e.target.value
-                      })
-                    }
+                    onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm text-slate-900 focus:outline-none focus:border-[#0E90CF] focus:ring-2 focus:ring-[#0E90CF]/20 transition resize-none"
                     placeholder="Tell us about your project..."
                   />
+
+                  {errors.message && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.message}
+                    </p>
+                  )}
+
                 </div>
 
+                {/* API Error */}
                 {error && (
                   <div className="text-red-500 text-sm font-medium">
                     {error}
                   </div>
                 )}
 
+                {/* Submit Button */}
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#0E90CF] hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition uppercase text-sm tracking-wide"
+                  className={`w-full text-white font-bold py-3 rounded-lg transition uppercase text-sm tracking-wide ${
+                    loading
+                      ? 'bg-slate-400 cursor-not-allowed'
+                      : 'bg-[#0E90CF] hover:bg-blue-600'
+                  }`}
                 >
                   {loading ? 'Sending...' : 'Send Message'}
                 </button>
@@ -332,7 +447,7 @@ export default function ContactUs() {
       </section>
 
       {/* Map Section */}
-      <section className="pb-16 px-6 lg:px-8 bg-white">
+      <section className="pb-16 px-6 lg:px-8 bg-white mt-6">
 
         <div className="max-w-7xl mx-auto space-y-8">
 
@@ -351,7 +466,7 @@ export default function ContactUs() {
           <div className="rounded-3xl overflow-hidden border border-slate-200 shadow-sm">
 
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.221420837449!2d79.8083131750448!3d11.95070968827895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53616a4cb59d87%3A0x95d5f26d5f3f6a55!2sPuducherry!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.221420837449!2d79.8083131750448!3d11.95070968827895!2m3!1f0!3f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a53616a4cb59d87%3A0x95d5f26d5f3f6a55!2sPuducherry!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
               width="100%"
               height="420"
               style={{ border: 0 }}

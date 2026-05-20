@@ -212,6 +212,7 @@ export default function Home() {
 
 
    {/* HERO SECTION */}
+{/* HERO SECTION */}
 <section className="relative overflow-hidden bg-[#06131f] min-h-[calc(100vh-8rem)] md:min-h-[calc(100vh-12rem)] py-16 md:py-24 flex items-center">
 
   {/* Background Glow */}
@@ -236,7 +237,7 @@ export default function Home() {
     <div className="grid lg:grid-cols-2 gap-14 items-center">
 
       {/* LEFT CONTENT */}
-      <div>
+      <div className="text-center lg:text-center flex flex-col items-center justify-center">
 
         <div className="inline-flex items-center gap-3 bg-white/10 border border-white/10 backdrop-blur-md rounded-full px-5 py-2 mb-8">
           <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -246,16 +247,16 @@ export default function Home() {
           </span>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl xl:text-5xl font-black leading-[1.25] tracking-tight text-white max-w-3xl">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-6xl font-black leading-[1.2] tracking-tight text-white max-w-4xl">
           Transform ideas into scalable digital platforms.
         </h1>
 
-        <p className="mt-8 text-lg leading-relaxed text-slate-300 max-w-2xl">
+        <p className="mt-8 text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl mx-auto">
           We build enterprise applications, cloud platforms, SAP solutions and modern digital products engineered for performance, security and long-term growth.
         </p>
 
         {/* CTA */}
-        <div className="flex flex-wrap gap-4 mt-10">
+        <div className="flex flex-wrap justify-center gap-4 mt-10">
 
           <Link
             to="/services"
@@ -274,36 +275,39 @@ export default function Home() {
         </div>
 
         {/* Bottom Stats */}
-     <div className="flex flex-wrap gap-10 mt-14">
+        <div className="flex flex-wrap justify-center gap-10 mt-14">
 
-  <div>
-    <h3 className="text-3xl font-black text-white">
-      <Counter end={500} suffix="+" />
-    </h3>
-    <p className="text-slate-400 text-sm mt-1">
-      Projects Delivered
-    </p>
-  </div>
+          <div>
+            <h3 className="text-3xl font-black text-white">
+              <Counter end={500} suffix="+" />
+            </h3>
 
-  <div>
-    <h3 className="text-3xl font-black text-white">
-      <Counter end={98} suffix="%" />
-    </h3>
-    <p className="text-slate-400 text-sm mt-1">
-      Client Satisfaction
-    </p>
-  </div>
+            <p className="text-slate-400 text-sm mt-1">
+              Projects Delivered
+            </p>
+          </div>
 
-  <div>
-    <h3 className="text-3xl font-black text-white">
-      <Counter end={24} suffix="/7" />
-    </h3>
-    <p className="text-slate-400 text-sm mt-1">
-      Technical Support
-    </p>
-  </div>
+          <div>
+            <h3 className="text-3xl font-black text-white">
+              <Counter end={98} suffix="%" />
+            </h3>
 
-</div>
+            <p className="text-slate-400 text-sm mt-1">
+              Client Satisfaction
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-black text-white">
+              <Counter end={24} suffix="/7" />
+            </h3>
+
+            <p className="text-slate-400 text-sm mt-1">
+              Technical Support
+            </p>
+          </div>
+
+        </div>
 
       </div>
 
@@ -361,31 +365,6 @@ export default function Home() {
             ))}
 
           </div>
-
-        </div>
-
-        {/* Floating Cards */}
-        <div className="absolute -top-8 -left-10 bg-[#0E90CF] text-white rounded-2xl p-5 shadow-2xl animate-bounce">
-
-          <p className="text-xs uppercase tracking-wide opacity-80">
-            Deployment
-          </p>
-
-          <h4 className="text-2xl font-black mt-1">
-            CI/CD
-          </h4>
-
-        </div>
-
-        <div className="absolute -bottom-10 right-0 bg-white text-slate-900 rounded-2xl p-5 shadow-2xl">
-
-          <p className="text-xs uppercase tracking-wide text-slate-500">
-            Enterprise
-          </p>
-
-          <h4 className="text-2xl font-black mt-1">
-            SAP + Cloud
-          </h4>
 
         </div>
 
