@@ -83,7 +83,7 @@ export default function Footer() {
                    </Link>
 
           <p className="text-sm text-slate-400 leading-7 max-w-full">
-            Nexvora Technologies delivers scalable enterprise software,
+            NexaTech Digital delivers scalable enterprise software,
             modern web platforms, cloud-native systems, and digital
             transformation solutions for businesses worldwide.
           </p>
