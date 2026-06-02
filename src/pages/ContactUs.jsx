@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaPhoneAlt, FaEnvelope, FaBuilding, FaClock } from 'react-icons/fa';
 const API = import.meta.env.VITE_API_URL;
 
 export default function ContactUs() {
@@ -211,22 +212,22 @@ export default function ContactUs() {
 
               {[
                 {
-                  icon: '📞',
+                  icon: <FaPhoneAlt />,
                   title: 'Phone',
                   info: ['+1 (415) 712-7961', '+91 926-543-6779']
                 },
                 {
-                  icon: '📧',
+                  icon: <FaEnvelope />,
                   title: 'Email',
                   info: ['info@nexatechdigital.com']
                 },
                 {
-                  icon: '🏢',
+                  icon: <FaBuilding />,
                   title: 'Office',
                   info: ['NexaTech Digital Pvt Ltd 3rd Floor, Tech Park Avenue,OMR Road, Chennai,Tamil Nadu – 600096,India']
                 },
                 {
-                  icon: '🕒',
+                  icon: <FaClock />,
                   title: 'Working Hours',
                   info: ['Mon - Sat | 9:00 AM - 6:00 PM']
                 }

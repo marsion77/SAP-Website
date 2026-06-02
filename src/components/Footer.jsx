@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaYoutube, FaFacebook, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const socialLinks = [
   { icon: <FaFacebook />, url: "https://www.facebook.com" },
@@ -120,7 +120,7 @@ export default function Footer() {
           <div className="space-y-6 text-base text-slate-400 leading-7">
 
             <div className="flex items-start gap-4">
-              <span className="text-[#0E90CF] text-xl">📍</span>
+              <span className="text-[#0E90CF] text-xl"><FaMapMarkerAlt /></span>
               <p>
                 NexaTech Digital Pvt Ltd<br />
                 3rd Floor, Tech Park Avenue,<br />
@@ -131,7 +131,7 @@ export default function Footer() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-[#0E90CF] text-xl">📞</span>
+              <span className="text-[#0E90CF] text-xl"><FaPhoneAlt /></span>
               <div>
                 <p>0413-2240580</p>
                 <p>+91 98438 31580</p>
@@ -139,7 +139,7 @@ export default function Footer() {
             </div>
 
             <div className="flex items-start gap-4">
-              <span className="text-[#0E90CF] text-xl">✉️</span>
+              <span className="text-[#0E90CF] text-xl"><FaEnvelope /></span>
               <p>info@nexvoratechnologies.com</p>
             </div>
 
