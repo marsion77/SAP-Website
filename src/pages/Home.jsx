@@ -1,12 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import counter from "../utils/Counter"
 import { Link } from 'react-router-dom';
+import { FaLaptopCode, FaMobileAlt, FaGlobe, FaReact, FaServer, FaShoppingCart, FaPalette, FaUserTie } from 'react-icons/fa';
 import reactLogo from '../assets/react.svg';
 import vueLogo from '../assets/vue.svg';
 import angularLogo from '../assets/angular.svg';
 import nextjsLogo from '../assets/nextjs.svg';
 import tailwindLogo from '../assets/tailwind.svg';
 import nodeLogo from '../assets/nodejs.svg';
+// import sapLogo from '../assets/sap.p';
 import expressLogo from '../assets/expressjs.svg';
 import pythonLogo from '../assets/python.svg';
 import javaLogo from '../assets/java.svg';
@@ -75,42 +77,42 @@ export default function Home() {
   const services = [
     {
       title: 'Web Application',
-      icon: '💻',
+      icon: <FaLaptopCode />,
       description: 'Custom web platforms with scalable architecture.'
     },
     {
       title: 'Mobile Application',
-      icon: '📱',
+      icon: <FaMobileAlt />,
       description: 'Cross-platform mobile apps with polished user experience.'
     },
     {
       title: 'Website Development',
-      icon: '🌐',
+      icon: <FaGlobe />,
       description: 'Responsive modern websites for growing brands.'
     },
     {
       title: 'Frontend Development',
-      icon: '⚛️',
+      icon: <FaReact />,
       description: 'Fast and engaging interfaces using modern frameworks.'
     },
     {
       title: 'Backend Development',
-      icon: '🔧',
+      icon: <FaServer />,
       description: 'Secure APIs and reliable server-side systems.'
     },
     {
       title: 'Ecommerce Solutions',
-      icon: '🛒',
+      icon: <FaShoppingCart />,
       description: 'Modern ecommerce experiences with payment integrations.'
     },
     {
       title: 'UI/UX Design',
-      icon: '🎨',
+      icon: <FaPalette />,
       description: 'User-focused interfaces designed for better engagement.'
     },
     {
       title: 'Hire Developers',
-      icon: '👨‍💻',
+      icon: <FaUserTie />,
       description: 'Dedicated engineering teams for rapid project delivery.'
     }
   ];
@@ -212,7 +214,6 @@ export default function Home() {
 
 
    {/* HERO SECTION */}
-{/* HERO SECTION */}
 <section className="relative overflow-hidden bg-[#06131f] min-h-[calc(100vh-8rem)] md:min-h-[calc(100vh-12rem)] py-16 md:py-24 flex items-center">
 
   {/* Background Glow */}
@@ -237,7 +238,7 @@ export default function Home() {
     <div className="grid lg:grid-cols-2 gap-14 items-center">
 
       {/* LEFT CONTENT */}
-      <div className="text-center lg:text-center flex flex-col items-center justify-center">
+      <div>
 
         <div className="inline-flex items-center gap-3 bg-white/10 border border-white/10 backdrop-blur-md rounded-full px-5 py-2 mb-8">
           <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -247,16 +248,16 @@ export default function Home() {
           </span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-6xl font-black leading-[1.2] tracking-tight text-white max-w-4xl">
+        <h1 className="text-5xl sm:text-6xl xl:text-5xl font-black leading-[1.25] tracking-tight text-white max-w-3xl">
           Transform ideas into scalable digital platforms.
         </h1>
 
-        <p className="mt-8 text-base sm:text-lg leading-relaxed text-slate-300 max-w-2xl mx-auto">
+        <p className="mt-8 text-lg leading-relaxed text-slate-300 max-w-2xl">
           We build enterprise applications, cloud platforms, SAP solutions and modern digital products engineered for performance, security and long-term growth.
         </p>
 
         {/* CTA */}
-        <div className="flex flex-wrap justify-center gap-4 mt-10">
+        <div className="flex flex-wrap gap-4 mt-10">
 
           <Link
             to="/services"
@@ -275,39 +276,36 @@ export default function Home() {
         </div>
 
         {/* Bottom Stats */}
-        <div className="flex flex-wrap justify-center gap-10 mt-14">
+     <div className="flex flex-wrap gap-10 mt-14">
 
-          <div>
-            <h3 className="text-3xl font-black text-white">
-              <Counter end={500} suffix="+" />
-            </h3>
+  <div>
+    <h3 className="text-3xl font-black text-white">
+      <Counter end={500} suffix="+" />
+    </h3>
+    <p className="text-slate-400 text-sm mt-1">
+      Projects Delivered
+    </p>
+  </div>
 
-            <p className="text-slate-400 text-sm mt-1">
-              Projects Delivered
-            </p>
-          </div>
+  <div>
+    <h3 className="text-3xl font-black text-white">
+      <Counter end={98} suffix="%" />
+    </h3>
+    <p className="text-slate-400 text-sm mt-1">
+      Client Satisfaction
+    </p>
+  </div>
 
-          <div>
-            <h3 className="text-3xl font-black text-white">
-              <Counter end={98} suffix="%" />
-            </h3>
+  <div>
+    <h3 className="text-3xl font-black text-white">
+      <Counter end={24} suffix="/7" />
+    </h3>
+    <p className="text-slate-400 text-sm mt-1">
+      Technical Support
+    </p>
+  </div>
 
-            <p className="text-slate-400 text-sm mt-1">
-              Client Satisfaction
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-3xl font-black text-white">
-              <Counter end={24} suffix="/7" />
-            </h3>
-
-            <p className="text-slate-400 text-sm mt-1">
-              Technical Support
-            </p>
-          </div>
-
-        </div>
+</div>
 
       </div>
 
@@ -365,6 +363,31 @@ export default function Home() {
             ))}
 
           </div>
+
+        </div>
+
+        {/* Floating Cards */}
+        <div className="absolute -top-8 -left-10 bg-[#0E90CF] text-white rounded-2xl p-5 shadow-2xl animate-bounce">
+
+          <p className="text-xs uppercase tracking-wide opacity-80">
+            Deployment
+          </p>
+
+          <h4 className="text-2xl font-black mt-1">
+            CI/CD
+          </h4>
+
+        </div>
+
+        <div className="absolute -bottom-10 right-0 bg-white text-slate-900 rounded-2xl p-5 shadow-2xl">
+
+          <p className="text-xs uppercase tracking-wide text-slate-500">
+            Enterprise
+          </p>
+
+          <h4 className="text-2xl font-black mt-1">
+            SAP + Cloud
+          </h4>
 
         </div>
 

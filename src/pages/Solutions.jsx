@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 export default function Solutions() {
 
   const solutions = [
@@ -292,12 +292,12 @@ export default function Solutions() {
 
           <div className="mt-10 flex justify-center">
 
-            <a
-              href="/contact"
-              className="px-8 py-4 bg-[#0E90CF] hover:bg-[#0879ac] rounded-2xl font-bold transition duration-300"
-            >
-              Contact Our Team
-            </a>
+             <Link
+               to="/contact"
+               className="px-8 py-4 rounded-2xl bg-[#0E90CF] hover:bg-[#087db5] text-white font-bold transition-all inline-flex items-center justify-center"
+             >
+               Contact Our Team
+             </Link>
 
           </div>
 
